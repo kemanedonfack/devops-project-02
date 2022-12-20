@@ -11,12 +11,6 @@ pipeline {
     }
 
     stages {
-
-        stage('show directory') {
-            steps {
-                sh 'ls'
-            }
-        }
         
         stage('Build & Package') {
             steps {
