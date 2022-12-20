@@ -14,7 +14,7 @@ pipeline {
         
         stage('Build & Package') {
             steps {
-                sh 'cd springboot-backend'
+                sh 'cd ./springboot-backend'
                 sh 'ls'
                 sh 'mvn clean '
                 sh 'mvn install -DskipTests '
