@@ -1,8 +1,7 @@
 FROM node:16-alpine
 WORKDIR /app
-COPY package.json ./
-COPY yarn.lock ./
-RUN yarn install --frozen-lockfile
+COPY package.json .
+RUN npm install
 COPY . .
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["npm","start"]

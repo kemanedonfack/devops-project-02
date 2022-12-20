@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const EMPLOYEE_API_BASE_URL = "http://localhost:8020/employes";
+const EMPLOYEE_API_BASE_URL = "http://react-frontend:8020/employes";
 
 class EmployeeService {
 
