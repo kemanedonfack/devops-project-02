@@ -11,23 +11,18 @@ pipeline {
     }
 
     stages {
-
-        stage('show directory') {
-            steps {
-                sh 'ls'
-            }
-        }
         
         stage('Build & Package') {
             steps {
-                sh 'mvn clean springboot-backend/'
-                sh 'mvn install -DskipTests springboot-backend/'
+                sh 'cd springboot-backend'
+                sh 'mvn clean '
+                sh 'mvn install -DskipTests '
             }
         }
 
         stage('Build image') {
             steps {
-                sh 'docker build -t springboot-backend:$BUILD_NUMBER springboot-backend/. '
+                sh 'docker build -t springboot-backend:$BUILD_NUMBER . '
             }
         }
 
