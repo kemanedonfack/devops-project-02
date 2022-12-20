@@ -12,6 +12,12 @@ pipeline {
 
     stages {
 
+        stage('show directory') {
+            steps {
+                sh 'ls'
+            }
+        }
+        
         stage('Build & Package') {
             steps {
                 sh 'springboot-backend/ mvn clean'
