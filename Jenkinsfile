@@ -27,7 +27,7 @@ pipeline {
 
         stage('Build image') {
             steps {
-                sh 'docker build -t springboot-backend:$BUILD_NUMBER . '
+                sh 'docker build -t springboot-backend:$BUILD_NUMBER springboot-backend/. '
             }
         }
 
