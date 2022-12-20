@@ -17,7 +17,7 @@ pipeline {
                 dir('springboot-backend') {
                   sh 'mvn clean '
                   sh 'mvn install -DskipTests '
-              }
+                }
             }
         }
 
@@ -25,10 +25,11 @@ pipeline {
             steps {
                 dir('springboot-backend') {
                   sh 'docker build -t springboot-backend:$BUILD_NUMBER . '
-              }
-               dir('react-frontend') {
+                }
+                
+                dir('react-frontend') {
                   sh 'docker build -t react-frontend:$BUILD_NUMBER . '
-              }
+                }
                 
             }
         }
