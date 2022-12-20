@@ -12,7 +12,7 @@ pipeline {
 
     stages {
         
-        stage('Build & Package') {
+        stage('Build & Package spring app') {
             steps {
                 dir('springboot-backend') {
                   sh 'mvn clean '
@@ -21,9 +21,15 @@ pipeline {
             }
         }
 
-        stage('Build image') {
+        stage('Build images of both app') {
             steps {
-                sh 'docker build -t springboot-backend:$BUILD_NUMBER . '
+                dir('springboot-backend') {
+                  sh 'docker build -t springboot-backend:$BUILD_NUMBER . '
+              }
+               dir('react-frontend') {
+                  sh 'docker build -t react-frontend:$BUILD_NUMBER . '
+              }
+                
             }
         }
 
