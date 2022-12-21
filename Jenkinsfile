@@ -34,7 +34,7 @@ pipeline {
             }
         }
 
-        stage('Push image') {
+        stage('Push images to hub') {
             steps {
                 sh 'echo $dockercredentials_PSW | docker login -u $dockercredentials_USR --password-stdin '
                 sh 'docker image tag springboot-backend:$BUILD_NUMBER lugar2020/springboot-backend:$BUILD_NUMBER'
