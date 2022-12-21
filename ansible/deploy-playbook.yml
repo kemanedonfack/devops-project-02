@@ -1,0 +1,21 @@
+---
+
+- name: copy of the manifests kubernetes to the master node 
+  hosts: master-node
+  tasks: 
+  - name: copy docker composer file to node
+    become: yes
+    copy: 
+      src: kubernetes/
+      dest: /home/
+
+  - name: deploy the database
+    command: "kubectl -f apply database.yml"
+
+  - name: deploy the backend app
+    command: "kubectl -f apply backend.yml"
+
+  - name: deploy the frontend app
+    command: "kubectl -f apply frontend.yml"
+
+    

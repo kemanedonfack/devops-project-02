@@ -1,0 +1,4 @@
+api Version: v1
+kind: Namespace
+metadata:
+  name: staging
