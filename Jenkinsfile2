@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    
+    stages {
+        
+        stage('Build & Package spring app') {
+            steps {
+                dir('ansible') {
+                  sh 'ansible-playbook -i hosts deploy-playbook.yml'
+                }
+            }
+        }
+
+    }
+}
