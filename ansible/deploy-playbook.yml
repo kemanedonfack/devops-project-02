@@ -4,10 +4,10 @@
   hosts: all
   tasks: 
   - name: copy docker composer file to node
-    become: yes
     copy: 
       src: kubernetes/
       dest: /root/
+    become: yes
 
   - name: deploy the database
     command: "kubectl apply -f /root/database.yml"
