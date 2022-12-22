@@ -1,2 +1,2 @@
 [master-node]
-192.168.32.151 
+192.168.32.151 host_key_checking
