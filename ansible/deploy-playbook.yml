@@ -7,15 +7,15 @@
     become: yes
     copy: 
       src: kubernetes/
-      dest: /home/
+      dest: /root/
 
   - name: deploy the database
-    command: "kubectl -f apply database.yml"
+    command: "kubectl -f apply /root/database.yml"
 
   - name: deploy the backend app
-    command: "kubectl -f apply backend.yml"
+    command: "kubectl -f apply /root/backend.yml"
 
   - name: deploy the frontend app
-    command: "kubectl -f apply frontend.yml"
+    command: "kubectl -f apply /root/frontend.yml"
 
     
