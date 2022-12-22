@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend-container
-        image: lugar2020/react-frontend:${env.BUILD_NUMBER}
+        image: lugar2020/react-frontend:docker_tag
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8020
