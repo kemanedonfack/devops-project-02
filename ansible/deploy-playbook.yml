@@ -1,7 +1,7 @@
 ---
 
 - name: copy of the manifests kubernetes to the master node 
-  hosts: master-node
+  hosts: all
   tasks: 
   - name: copy docker composer file to node
     become: yes
