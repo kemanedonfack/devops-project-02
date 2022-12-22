@@ -7,6 +7,7 @@ pipeline {
             steps {
                 dir('ansible') {
                   sh 'ls'
+                  sh 'whoami'
                   sh 'ansible all -m ping -i hosts'
                   sh 'ansible-playbook -i hosts deploy-playbook.yml'
                 }
