@@ -6,7 +6,7 @@ pipeline {
         stage('Build & Package spring app') {
             steps {
                 dir('ansible') {
-                  sh 'ansible -m ping -i hosts'
+                  sh 'ansible all -m ping -i hosts'
                   sh 'ansible-playbook -i hosts deploy-playbook.yml'
                 }
             }
