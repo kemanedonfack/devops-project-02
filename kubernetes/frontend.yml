@@ -32,7 +32,7 @@ spec:
   ports:
     - port: 8020
       targetPort: 8020
-      nodePort: 30005
+      nodePort: 30006
   selector:
     app: frontend-app
 
