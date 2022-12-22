@@ -47,6 +47,11 @@ pipeline {
 
         stage('deploy on kubernetes') {
             steps {
+                dir('kubernetes'){
+                    sh ''' final_tag=$(echo $BUILD_NUMBER | tr -d ' ') 
+                     sed -i "s/docker_tag/$final_tag/g" backend.yml
+                    '''
+                }
                 dir('ansible') {                  
                   ansiblePlaybook become: true, credentialsId: 'masternodeid', installation: 'ansible', inventory: 'hosts.ini', playbook: 'deploy-playbook.yml'
                 }

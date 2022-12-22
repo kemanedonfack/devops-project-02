@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend-container
-        image: lugar2020/springboot-backend:${env.BUILD_NUMBER}
+        image: lugar2020/springboot-backend:docker_tag
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8020
