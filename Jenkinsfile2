@@ -7,7 +7,7 @@ pipeline {
             steps {
                 dir('ansible') {
                   sh 'ls'
-                  ansiblePlaybook become: true, credentialsId: 'masternodeid', installation: 'ansible', inventory: 'hosts', playbook: 'deploy-playbook.yml'
+                  ansiblePlaybook become: true, installation: 'ansible', inventory: 'hosts', playbook: 'deploy-playbook.yml'
                 }
             }
         }
