@@ -5,9 +5,7 @@ pipeline {
         
         stage('ansible') {
             steps {
-                dir('ansible') {
-                  sh 'ansible all -m ping -i hosts.ini'
-                  
+                dir('ansible') {                  
                   ansiblePlaybook become: true, credentialsId: 'masternodeid', installation: 'ansible', inventory: 'hosts.ini', playbook: 'deploy-playbook.yml'
                 }
             }
