@@ -10,12 +10,12 @@
       dest: /root/
 
   - name: deploy the database
-    command: "kubectl -f apply /root/database.yml"
+    command: "kubectl apply -f /root/database.yml"
 
   - name: deploy the backend app
-    command: "kubectl -f apply /root/backend.yml"
+    command: "kubectl apply -f /root/backend.yml"
 
   - name: deploy the frontend app
-    command: "kubectl -f apply /root/frontend.yml"
+    command: "kubectl apply -f /root/frontend.yml"
 
     
