@@ -19,7 +19,7 @@ spec:
         image: lugar2020/react-frontend:docker_tag
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8020
+        - containerPort: 30000
 
 ---
 
@@ -30,8 +30,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 8020
-      targetPort: 8020
+    - port: 30000
+      targetPort: 30000
       nodePort: 30006
   selector:
     app: frontend-app
