@@ -26,13 +26,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata: 
-  name: backend-service
+  name: springboot-backend
+  labels:
+    name: backend-service
 spec:
-  type: NodePort
   ports:
     - port: 8020
       targetPort: 8020
-      nodePort: 30005
   selector:
     app: backend-app
 
