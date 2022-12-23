@@ -65,8 +65,10 @@ pipeline {
         stage('Clean up') {
             steps {
                 sh 'docker rmi lugar2020/springboot-backend:$BUILD_NUMBER --force'
+                sh 'docker rmi springboot-backend:$BUILD_NUMBER --force'
                 
                 sh 'docker rmi lugar2020/react-frontend:$BUILD_NUMBER --force'
+                sh 'docker rmi react-frontend:$BUILD_NUMBER --force'
             }
         }
     }
