@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:8020/employes",
+  "proxy": "http://springboot-backend:8020/employes",
   "eslintConfig": {
     "extends": "react-app"
   },
