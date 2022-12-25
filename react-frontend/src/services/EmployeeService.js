@@ -1,27 +1,25 @@
 import axios from 'axios';
 
-const EMPLOYEE_API_BASE_URL = "http://springboot-backend:8020/employes";
-
 class EmployeeService {
 
     getEmployees(){
-        return axios.get(EMPLOYEE_API_BASE_URL+'/all');
+        return axios.get('/all');
     }
 
     createEmployee(employee){
-        return axios.post(EMPLOYEE_API_BASE_URL + '/create', employee);
+        return axios.post('/create', employee);
     }
 
     getEmployeeById(employeeId){
-        return axios.get(EMPLOYEE_API_BASE_URL + '/' + employeeId);
+        return axios.get('/' + employeeId);
     }
 
     updateEmployee(employee, employeeId){
-        return axios.put(EMPLOYEE_API_BASE_URL + '/' + employeeId, employee);
+        return axios.put('/' + employeeId, employee);
     }
 
     deleteEmployee(employeeId){
-        return axios.delete(EMPLOYEE_API_BASE_URL + '/' + employeeId);
+        return axios.delete('/' + employeeId);
     }
 }
 
