@@ -13,6 +13,7 @@ import java.util.Map;
 
 
 @RestController
+@CrossOrigin(origins = "http://react-frontend:3000")
 @RequestMapping("/employes")
 public class EmployeController {
 
